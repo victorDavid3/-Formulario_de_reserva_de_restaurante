@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+        <link rel="stylesheet" type="text/css" href="CSS/corIndex.css">
+        
+        <title>Reserva restaurante</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+     
+     <div id="cab">
+         <h2>Formulário de reserva</h2>
+     </div>
+         
+       <div class="quad"> 
+
+        <form>
+
+        <br>
+        
+        <!-- nome -->
+        <label for="nome">Nome</label>
+        <input class="form-control form-control-lg" id="nome" type="text" value="" placeholder="Nome">
+
+        <br>
+
+         <!-- Email -->
+        <label for="email">Email</label>
+        <input type="email" class="form-control form-control-lg" id="email" placeholder="email@example.com">
+
+        <br>
+        
+        <!-- Telefone -->
+        <label for="tele">Telefone</label>
+        <input class="form-control form-control-lg" id="tele" type="number" value="" placeholder="99999999999">
+        <br>
+
+        <label for="dia">Data da reserva</label>
+        <input class="form-control form-control-lg" type="date" id="dia">
+
+        <br>
+
+ <!-- Range input -->
+<samp>Selecione a quantidade de pessoas</samp>
+<br>
+<div class="quad2">
+ <form>
+  <div class="form-group">
+    <samp id="mini">Mínimo 1</samp>
+    <samp id="maxi">10 Máximo</samp>
+    <input type="range" class="form-control-range" id="formControlRange" value="2" min="1" max="10" step="1" oninput="lerValue()">
+    
+    <center><samp id="valo"></samp></center>
+
+    </div>
+ </form>
+</div>
+
+ <br>
+
+<samp>Alguma especificação na reserva?</samp>
+<div class="quad2">
+
+<!-- radio input -->
+ <div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked onclick="verifEspecif()">
+  <label class="form-check-label" for="exampleRadios1">Não</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" onclick="verifEspecif()">
+  <label class="form-check-label" for="exampleRadios2">Sim</label>
+</div>
+
+                <!-- TextArea -->
+               
+                <div id="divEspecif">
+                <label for="especif" class="mt-2">Escreva a especificação</label><br />
+                <textarea id="especif" rows="" cols="" class="form-control" placeholder="Especificação">
+                </textarea>
+                </div>
+
+ </div>
+
+<br>
+
+     
+
+        <!-- button input -->
+        <button type="button" class="btn btn-success" onClick="leritura()">Terminar</button>
+        </form>
+
+
+        <br><br>
+
+    <div class="quad3">
+        <!-- Dados da reserva -->
+        <div id="respAlert" >
+        <p id="respNome"></p >
+        <p id="respTele"></p>
+        <p id="respEmail"></p>
+        <p id="respData"></p>
+        <p id="respQuantP"></p>
+        <p id="respEspecifTXT"></p>
+
+        <!-- Checkbox -->
+        <input type="checkbox" id="conf">
+        <label for="conf" class="mr-2">Confirmo os dados da reserva</label>
+        <!-- button  Realizar reserva -->
+        <center><button type="button"class="btn btn-primary" onClick="confirm()">Realizar reserva</button></center>
+        </div>
+    </div>
+
+    <br><br>
+
+    </div> 
+
+
+ <script src="scripts/jsIndex.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>
