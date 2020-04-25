@@ -43,9 +43,21 @@
         <input class="form-control form-control-lg" id="tele" type="number" value="" placeholder="99999999999">
         <br>
 
-        <label for="dia">Data da reserva</label>
+        <samp>Data e hora da reserva</samp>
+        <!-- Data e hora -->
+        <div class="quad2">
+         <!-- Data input -->
+        <div id="divDia">
+        <label for="dia">Data</label>
         <input class="form-control form-control-lg" type="date" id="dia">
-
+        </div>
+        <!-- hora input -->
+        <div id="divHora">
+        <label for="hora">Horario</label>
+        <input class="form-control form-control-lg" type="time" id="hora">
+        </div>
+        <br><br><br><br><br>
+        </div>
         <br>
 
  <!-- Range input -->
@@ -101,13 +113,14 @@
 
         <br><br>
 
-    <div class="quad3">
+   
         <!-- Dados da reserva -->
-        <div id="respAlert" >
+        <div class="quad3" id="respAlert" >
         <p id="respNome"></p >
         <p id="respTele"></p>
         <p id="respEmail"></p>
         <p id="respData"></p>
+        <p id="respHora"></p>
         <p id="respQuantP"></p>
         <p id="respEspecifTXT"></p>
 
@@ -117,7 +130,7 @@
         <!-- button  Realizar reserva -->
         <center><button type="button"class="btn btn-primary" onClick="confirm()">Realizar reserva</button></center>
         </div>
-    </div>
+ 
 
     <br><br>
 

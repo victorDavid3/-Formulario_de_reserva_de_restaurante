@@ -6,6 +6,7 @@ var nada="";
 var especifc="";
 var especifcTXT="";
 var dataReserva="";
+var horaReserva="";
 var erro=0;
 var erroNome=""
 var confir="";
@@ -13,7 +14,8 @@ var confir="";
 var respAlert = document.getElementById('respAlert');
 var divEspecif = document.getElementById('divEspecif');
 
-limpar();
+
+limpar();//faz os valores serem ""
 esconder();
 lerValue();
 
@@ -21,7 +23,6 @@ lerValue();
 function esconder(){
 	respAlert.style.display= "none";
 	divEspecif.style.display="none";
-
 }
 
 function limpar(){
@@ -58,6 +59,7 @@ function leritura(){
 	emailss = document.getElementById("email").value;
 	quantP = document.getElementById("formControlRange").value;
 	dataReserva = document.getElementById("dia").value;
+	horaReserva =document.getElementById("hora").value;
 	if(especifc===true){
 		especifcTXT = document.getElementById("especif").value;
 	}
@@ -81,6 +83,9 @@ function verif(){
 	}else if(dataReserva===""){
 	erro=1;
 	erroNome=(erroNome+"Data da reserva")
+	}else if(horaReserva===""){
+	erro=1;
+	erroNome=(erroNome+"Horario da reserva")
 	}else if(especifcTXT===""){
 		if(especifc===true){
 			erro=1;
@@ -106,6 +111,7 @@ function modf(){
 	quantP = ("Quantidade de pessoas: "+quantP)
 	emailss = ("Email: "+emailss);
 	dataReserva = ("Dia: "+dataReserva);
+	horaReserva = ("Horario: "+horaReserva);
 	especifcTXT = ("Especificação: "+ especifcTXT)
 
 	most();
@@ -113,12 +119,13 @@ function modf(){
 
 
  function most(){
- 	respAlert.style.display= "inline";
+ 	respAlert.style.display= "block";
 	document.getElementById("respTele").innerHTML = telefone;
 	document.getElementById("respNome").innerHTML = nome;
 	document.getElementById("respEmail").innerHTML = emailss;
 	document.getElementById("respQuantP").innerHTML = quantP;
 	document.getElementById("respData").innerHTML = dataReserva;
+	document.getElementById("respHora").innerHTML = horaReserva;
 	document.getElementById("respEspecifTXT").innerHTML = especifcTXT;
 	especifcTXT=nada;
  }

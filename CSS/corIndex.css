@@ -79,7 +79,19 @@ body {
   border-radius: 20px;
 }
 
+
 #especif{
   border-radius: 10px;
 }
 
+#divDia{
+  max-width: 45%;
+  float: left;
+  margin: 1%;
+}
+
+#divHora{
+  max-width: 45%;
+  float: left;
+  margin: 1%;
+}
