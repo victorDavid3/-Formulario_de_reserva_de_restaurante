@@ -1,3 +1,4 @@
+//Variáveis
 var telefone="";
 var nome="";
 var quantP="";
@@ -14,7 +15,7 @@ var confir="";
 var respAlert = document.getElementById('respAlert');
 var divEspecif = document.getElementById('divEspecif');
 
-
+//Funções ativadas no carregamento da pagina
 limpar();//faz os valores serem ""
 esconder();
 lerValue();
@@ -29,13 +30,17 @@ function limpar(){
 	document.getElementById("especif").innerHTML = nada;
 }
 
-
+//Função ativada no carregamento da página e ao clicar no Range input 
 function lerValue(){
 	quantP = document.getElementById("formControlRange").value;
 	quantP = (quantP +" pessoas");
 	document.getElementById("valo").innerHTML = quantP;
 }
 
+
+//Funções esperando serem acionadas
+
+//Verifica se o radio input (Sim) esta checado
 function verifEspecif(){
 
 especifc = document.getElementById("exampleRadios2").checked;
@@ -49,7 +54,7 @@ if(especifc===true){
 }
 
 
-
+//Le o conteúdo de cada input e armazena o conteúdo em variáveis
 function leritura(){
 
 	respAlert.style.display= "none";
@@ -64,9 +69,13 @@ function leritura(){
 		especifcTXT = document.getElementById("especif").value;
 	}
 	
-	verif();
+	verif(); //Executa a função verif
 }
-
+// -- função verif
+//Verifica o conteúdo de cada input
+//Se um deles estiver vazio erro será igual 1, se não erro será igual a 0 
+//Se erro = 0 executa a função modf
+//Se erro = 1 retorna uma mensagem ao usuário falando o que falta ser preenchido e coloca erro=0 possibilitando uma nova verificação sem atualizar a pagina
 
 function verif(){
 	erroNome= "Falta preencher: ";
@@ -96,28 +105,16 @@ function verif(){
 	}
 
 	if(erro===0){
-		modf();
+		most(); //executa a função most
 	} else if(erro===1){
-		alert(erroNome);
-		erro=0;
+		alert(erroNome); //retorna uma mensagem ao usuário falando o que falta ser preenchido
+		erro=0; //coloca erro=0 possibilitando uma nova verificação sem atualizar a pagina
 	}
 	
 }
 
-function modf(){
-
-	telefone = ("Telefone: "+telefone);
-	nome = ("Nome: "+nome);
-	quantP = ("Quantidade de pessoas: "+quantP)
-	emailss = ("Email: "+emailss);
-	dataReserva = ("Dia: "+dataReserva);
-	horaReserva = ("Horario: "+horaReserva);
-	especifcTXT = ("Especificação: "+ especifcTXT)
-
-	most();
-}
-
-
+// -- função most --
+//Mostra o conteúdo das variáveis na tela
  function most(){
  	respAlert.style.display= "block";
 	document.getElementById("respTele").innerHTML = telefone;
